@@ -59,7 +59,7 @@ angular.module('searchPrototypeApp')
             }
 
             if ($scope.country) {
-                str += "+AND+primarysource.reportercountry:()%22" + $scope.country + "%22)";
+                str += "+AND+primarysource.reportercountry:(%22" + $scope.country + "%22)";
             }
 
             if ($scope.medicinalproduct) {
