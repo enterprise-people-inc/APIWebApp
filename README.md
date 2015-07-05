@@ -48,7 +48,7 @@ Our architect, expored multiple technologies and frameworks, and finalized on An
 
 Development team followed the design to define the layouts. Utilizing responsive UI framework to make sure the web application works on multiple devices. After the basic integration of OpenFDA.gov RESTful web services, development team decided to go single search functionality related to drug events from OepnFDA.gov. Development team went with mutiple prototypes exploring various AngularJS framework utilizing angular-fullstack & angular generators using yeoman.
 
-All the source code is stored in .git, Scrum master and Product owner worked together to come up with a plan and define 2 weeks scrum for this development using Ralley.
+All the source code is stored in .git, Scrum master and Product owner worked together to come up with a plan and define a scrum for this development using Ralley.
 
 ###Testing & Deployments
 Our deployment process includes ```grunt build``` runs all the tests and generates the necessary files for deployments under dist folder, which gets deployed to Heroku automatically once the changed code is commited to Git.

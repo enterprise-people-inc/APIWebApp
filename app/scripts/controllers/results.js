@@ -90,6 +90,7 @@ angular.module('searchPrototypeApp')
         };
 
         function executeSearch(str) {
+            $scope.results = [];
             $scope.renderResults = true;
             advancedSearchService.getAdvancedSearchResults(str).then(function(response) {
                 updateResults(response);
