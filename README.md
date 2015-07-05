@@ -1,7 +1,9 @@
 # Enterprise People Inc - GSA 18f RFQ response. - APIWebApp
 ##Deliverables
 [Pool Two Prototype Location] (http://gsa-search.herokuapp.com)
+
 [Pool Two Repository on GitHub] (https://github.com/enterprise-people-inc/APIWebApp)
+
 Summary of Approach: README.md (this file)
 
 Product Backlog: On Ralley, final snapshot in /documents/
@@ -23,6 +25,7 @@ We approached this as standalong web application consuming RESTful web services.
 - [x] DevOps Engineer
 
 ###Technology Stack 
+
 ####open source technologies
 - [x] AngularJS
 - [x] Boostrap
@@ -38,6 +41,7 @@ We approached this as standalong web application consuming RESTful web services.
 
 ####Continous Integration
 - [x] Heroku & Git automatic deployment
+- [x] CodeShip to build & deploy to different environments. (GitHub commit triggers the build and deploy for DEVELOPMENT & TESTING)
 
 ###Development Process
 Our architect, expored multiple technologies and frameworks, and finalized on AngularJS MVC framework for this project. Architect established the best practies and industry standards to minimize the custom code and also to make it extendable and re-usable.
