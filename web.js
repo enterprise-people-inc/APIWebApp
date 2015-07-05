@@ -10,7 +10,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var errorHandler = require('errorhandler');
-
+var connect-rewrite = require ('connect-rewrite);
 
 var app = express();
  
@@ -18,5 +18,6 @@ app.use(express.logger('dev'));
 app.use(logger('dev')); // log every request to the console
 app.use(bodyParser()); // pull information from html in POST
 app.use(methodOverride());  // simulate DELETE and PUT
+app.use(connect-rewrite());
 app.use(gzippo.staticGzip("" + __dirname + "/dist"));
 app.listen(process.env.PORT || 5000);
