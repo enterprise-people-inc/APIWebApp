@@ -9,12 +9,9 @@
  */
 angular.module('searchPrototypeApp')
     .controller('HeaderController', ['$scope', '$location', function ($scope, $location) {
-
-	    $scope.isCollapsed = true;
-
-        $scope.isActive = function (viewLocation) {
-        	console.log(viewLocation);
-            return viewLocation === $location.path();
+    	    $scope.isCollapsed = true;
+            $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
         };
 
     }]);

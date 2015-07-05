@@ -50,9 +50,9 @@ angular
               title: 'Enterprise People GSA Prototype Search Results'
             })
       .otherwise({
-         templateUrl: 'views/about.html',
-                controller: 'AboutCtrl',
-                title: 'Enterprise People GSA Prototype'
+              controller: '404Ctrl',
+              templateUrl: 'views/404.html',
+              title: 'No Results'
       });
       
       $locationProvider.html5Mode(true);
