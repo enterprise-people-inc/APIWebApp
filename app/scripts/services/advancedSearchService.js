@@ -21,7 +21,7 @@ console.log(results);
          $rootScope.showSpinner = false;
         var getAdvancedSearchResults = function(results) {
             $rootScope.showSpinner = true;
-            return $http.get('https://api.fda.gov/drug/event.json?search=' + results + "&limit=10")
+            return $http.get('https://api.fda.gov/drug/event.json?search=' + results )
                 .success(function(response) {
                     $rootScope.showSpinner = false;
                     return response;
@@ -29,7 +29,7 @@ console.log(results);
                 .error(function(data, status, headers, config) {
                      $rootScope.showSpinner = false;
                     if ( status == "404") {
-                      $location.path('/404/')
+                      $location.path('/noresults/')
                     }
                     return null;
                 });

@@ -49,6 +49,11 @@ angular
               controller: 'ResultsCtrl',
               title: 'Enterprise People GSA Prototype Search Results'
             })
+      .when('/noresults/', {
+                            templateUrl: 'views/noresults.html',
+                            controller: 'NoResultsCtrl',
+                            title: 'No Results Found'
+                          })      
       .otherwise({
               controller: '404Ctrl',
               templateUrl: 'views/404.html',

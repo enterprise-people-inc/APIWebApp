@@ -6,7 +6,7 @@
 
 Summary of Approach: README.md (this file)
 
-Product Backlog: On Ralley, final snapshot in /documents/
+Product Backlog: On Ralley, final snapshot in [Documents] (https://github.com/enterprise-people-inc/APIWebApp/tree/master/documents)
 
 RFQ Attachment E: /documents/rfq/
 
