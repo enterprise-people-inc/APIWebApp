@@ -80,7 +80,6 @@ angular.module('searchPrototypeApp')
             }
             //Pagination
             var pagination = "&limit=" + $scope.limit + "&skip=" + $scope.skip;// + "&page=" + $scope.page;
-            console.log(str + pagination);
             return str + pagination;
         }
 
@@ -93,7 +92,6 @@ angular.module('searchPrototypeApp')
         function executeSearch(str) {
             $scope.renderResults = true;
             advancedSearchService.getAdvancedSearchResults(str).then(function(response) {
-                console.log($scope.page);
                 updateResults(response);
             });
         }
