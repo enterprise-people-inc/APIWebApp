@@ -10,7 +10,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var errorHandler = require('errorhandler');
-var connectRewrite = require ('connect-rewrite);
+var connectRewrite = require('connect-rewrite);
 
 var app = express();
  
