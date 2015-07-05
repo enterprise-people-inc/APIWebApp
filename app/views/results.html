@@ -1,0 +1,739 @@
+<div ng-controller="ResultsCtrl" ng-submit="submit()">
+    <!-- Search Criteria -->
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel-group" id="accordion2">
+                <div class="panel panel-default" style="margin-left:0px;margin-right:0px;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#searchCriteria">
+                                Search Criteria </a>
+                        </h4>
+                    </div>
+                    <div id="searchCriteria">
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="from_date" class="col-md-1 control-label" style="padding-top: 0px;">From
+                                        Date:</label>
+
+                                    <div class="col-md-5">
+                                        <input type="date" class="form-control" name="from_date" id="from_date"
+                                               placeholder="yyyy-MM-dd" ng-model="from_date">
+                                    </div>
+                                    <label for="to_date" class="col-md-1 control-label" style="padding-top: 0px;">To
+                                        Date:</label>
+
+                                    <div class="col-md-5">
+                                        <input type="date" class="form-control" name="to_date" id="to_date"
+                                               ng-model="to_date" placeholder="yyyy-MM-dd">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="from_age" class="col-md-3 control-label">From Age:</label>
+
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="from_age" id="from_age"
+                                               ng-model="from_age">
+                                    </div>
+                                    <label for="to_age" class="col-md-3 control-label">To Age:</label>
+
+                                    <div class="col-md-3">
+                                        <input id="to_age" type="text" class="form-control" name="to_age"
+                                               ng-model="to_age">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="search" class="col-md-5 control-label">General Search: <br>
+                                        <small> (all fields)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input id="search" type="text" class="form-control" name="search"
+                                               ng-model="searchParam" value={{searchParam}}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country" class="col-md-5 control-label">Country:</label>
+
+                                    <div class="col-md-7">
+                                        <select class="form-control" name="country" id="country" ng-model="country">
+                                            <option>GLOBALLY</option>
+                                            <option>AALAND ISLANDS</option>
+                                            <option>AFGHANISTAN</option>
+                                            <option>ALAND ISLANDS</option>
+                                            <option>ALBANIA</option>
+                                            <option>ALGERIA</option>
+                                            <option>AMERICAN SAMOA</option>
+                                            <option>AN</option>
+                                            <option>ANDORRA</option>
+                                            <option>ANGOLA</option>
+                                            <option>ANGUILLA</option>
+                                            <option>ANTARCTICA</option>
+                                            <option>ANTIGUA &amp; BARBUDA</option>
+                                            <option>ANTIGUA AND BARBUDA</option>
+                                            <option>ARGENTINA</option>
+                                            <option>ARMENIA</option>
+                                            <option>ARUBA</option>
+                                            <option>AUSTRALIA</option>
+                                            <option>AUSTRIA</option>
+                                            <option>AZERBAIJAN</option>
+                                            <option>BAHAMAS</option>
+                                            <option>BAHRAIN</option>
+                                            <option>BANGLADESH</option>
+                                            <option>BARBADOS</option>
+                                            <option>BELARUS</option>
+                                            <option>BELGIUM</option>
+                                            <option>BELIZE</option>
+                                            <option>BENIN</option>
+                                            <option>BERMUDA</option>
+                                            <option>BHUTAN</option>
+                                            <option>BOLIVIA</option>
+                                            <option>BOSNIA &amp; HERZEGOVINA</option>
+                                            <option>BOSNIA AND HERZEGOWINA</option>
+                                            <option>BOTSWANA</option>
+                                            <option>BOUVET ISLAND</option>
+                                            <option>BRAZIL</option>
+                                            <option>BRITAIN (UK)</option>
+                                            <option>BRITISH INDIAN OCEAN TERRITORY</option>
+                                            <option>BRUNEI</option>
+                                            <option>BRUNEI DARUSSALAM</option>
+                                            <option>BULGARIA</option>
+                                            <option>BURKINA FASO</option>
+                                            <option>BURUNDI</option>
+                                            <option>CAMBODIA</option>
+                                            <option>CAMEROON</option>
+                                            <option>CANADA</option>
+                                            <option>CAPE VERDE</option>
+                                            <option>CARIBBEAN NETHERLANDS</option>
+                                            <option>CAYMAN ISLANDS</option>
+                                            <option>CENTRAL AFRICAN REP.</option>
+                                            <option>CHAD</option>
+                                            <option>CHILE</option>
+                                            <option>CHINA</option>
+                                            <option>CHRISTMAS ISLAND</option>
+                                            <option>COCOS (KEELING) ISLANDS</option>
+                                            <option>COLOMBIA</option>
+                                            <option>COMOROS</option>
+                                            <option>CONGO</option>
+                                            <option>CONGO (DEM. REP.)</option>
+                                            <option>CONGO (REP.)</option>
+                                            <option>CONGO, THE DEMOCRATIC REPUBLIC OF THE</option>
+                                            <option>COOK ISLANDS</option>
+                                            <option>COSTA RICA</option>
+                                            <option>COTE D'IVOIRE</option>
+                                            <option>COUNTRY NOT SPECIFIED</option>
+                                            <option>CROATIA</option>
+                                            <option>CROATIA (local name: Hrvatska)</option>
+                                            <option>CUBA</option>
+                                            <option>CURACAO</option>
+                                            <option>CYPRUS</option>
+                                            <option>CZECH REPUBLIC</option>
+                                            <option>DENMARK</option>
+                                            <option>DJIBOUTI</option>
+                                            <option>DOMINICA</option>
+                                            <option>DOMINICAN REPUBLIC</option>
+                                            <option>EAST TIMOR</option>
+                                            <option>ECUADOR</option>
+                                            <option>EGYPT</option>
+                                            <option>EL SALVADOR</option>
+                                            <option>EQUATORIAL GUINEA</option>
+                                            <option>ERITREA</option>
+                                            <option>ESTONIA</option>
+                                            <option>ETHIOPIA</option>
+                                            <option>European Union</option>
+                                            <option>FALKLAND ISLANDS</option>
+                                            <option>FAROE ISLANDS</option>
+                                            <option>FIJI</option>
+                                            <option>FINLAND</option>
+                                            <option>FRANCE</option>
+                                            <option>FRANCE, METROPOLITAN</option>
+                                            <option>FRENCH GUIANA</option>
+                                            <option>FRENCH POLYNESIA</option>
+                                            <option>FRENCH SOUTHERN &amp; ANTARCTIC LANDS</option>
+                                            <option>FRENCH SOUTHERN TERRITORIES</option>
+                                            <option>GABON</option>
+                                            <option>GAMBIA</option>
+                                            <option>GEORGIA</option>
+                                            <option>GERMANY</option>
+                                            <option>GHANA</option>
+                                            <option>GIBRALTAR</option>
+                                            <option>GREECE</option>
+                                            <option>GREENLAND</option>
+                                            <option>GRENADA</option>
+                                            <option>GUADELOUPE</option>
+                                            <option>GUAM</option>
+                                            <option>GUATEMALA</option>
+                                            <option>GUERNSEY</option>
+                                            <option>GUINEA</option>
+                                            <option>GUINEA-BISSAU</option>
+                                            <option>GUYANA</option>
+                                            <option>HAITI</option>
+                                            <option>HEARD ISLAND &amp; MCDONALD ISLANDS</option>
+                                            <option>HONDURAS</option>
+                                            <option>HONG KONG</option>
+                                            <option>HUNGARY</option>
+                                            <option>ICELAND</option>
+                                            <option>INDIA</option>
+                                            <option>INDONESIA</option>
+                                            <option>IRAN</option>
+                                            <option>IRAN (ISLAMIC REPUBLIC OF)</option>
+                                            <option>IRAQ</option>
+                                            <option>IRELAND</option>
+                                            <option>ISLE OF MAN</option>
+                                            <option>ISRAEL</option>
+                                            <option>ITALY</option>
+                                            <option>JAMAICA</option>
+                                            <option>JAPAN</option>
+                                            <option>JERSEY</option>
+                                            <option>JORDAN</option>
+                                            <option>KAZAKHSTAN</option>
+                                            <option>KENYA</option>
+                                            <option>KIRIBATI</option>
+                                            <option>KOREA (NORTH)</option>
+                                            <option>KOREA (SOUTH)</option>
+                                            <option>KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF</option>
+                                            <option>KOREA, REPUBLIC OF</option>
+                                            <option>KUWAIT</option>
+                                            <option>KYRGYZSTAN</option>
+                                            <option>LAO PEOPLE'S DEMOCRATIC REPUBLIC</option>
+                                            <option>LAOS</option>
+                                            <option>LATVIA</option>
+                                            <option>LEBANON</option>
+                                            <option>LESOTHO</option>
+                                            <option>LIBERIA</option>
+                                            <option>LIBYA</option>
+                                            <option>LIBYAN ARAB JAMAHIRIYA</option>
+                                            <option>LIECHTENSTEIN</option>
+                                            <option>LITHUANIA</option>
+                                            <option>LUXEMBOURG</option>
+                                            <option>MACAU</option>
+                                            <option>MACEDONIA</option>
+                                            <option>MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF</option>
+                                            <option>MADAGASCAR</option>
+                                            <option>MALAWI</option>
+                                            <option>MALAYSIA</option>
+                                            <option>MALDIVES</option>
+                                            <option>MALI</option>
+                                            <option>MALTA</option>
+                                            <option>MARSHALL ISLANDS</option>
+                                            <option>MARTINIQUE</option>
+                                            <option>MAURITANIA</option>
+                                            <option>MAURITIUS</option>
+                                            <option>MAYOTTE</option>
+                                            <option>MEXICO</option>
+                                            <option>MICRONESIA</option>
+                                            <option>MICRONESIA, FEDERATED STATES OF</option>
+                                            <option>MOLDOVA</option>
+                                            <option>MOLDOVA, REPUBLIC OF</option>
+                                            <option>MONACO</option>
+                                            <option>MONGOLIA</option>
+                                            <option>MONTENEGRO</option>
+                                            <option>MONTSERRAT</option>
+                                            <option>MOROCCO</option>
+                                            <option>MOZAMBIQUE</option>
+                                            <option>MYANMAR</option>
+                                            <option>MYANMAR (BURMA)</option>
+                                            <option>NAMIBIA</option>
+                                            <option>NAURU</option>
+                                            <option>NEPAL</option>
+                                            <option>NETHERLANDS</option>
+                                            <option>NETHERLANDS ANTILLES</option>
+                                            <option>NETHERLANDS ANTILLES (retired code)</option>
+                                            <option>NEW CALEDONIA</option>
+                                            <option>NEW ZEALAND</option>
+                                            <option>NICARAGUA</option>
+                                            <option>NIGER</option>
+                                            <option>NIGERIA</option>
+                                            <option>NIUE</option>
+                                            <option>NORFOLK ISLAND</option>
+                                            <option>NORTHERN MARIANA ISLANDS</option>
+                                            <option>NORWAY</option>
+                                            <option>OMAN</option>
+                                            <option>PAKISTAN</option>
+                                            <option>PALAU</option>
+                                            <option>PALESTINE</option>
+                                            <option>PALESTINIAN TERRITORY, OCCUPIED</option>
+                                            <option>PANAMA</option>
+                                            <option>PAPUA NEW GUINEA</option>
+                                            <option>PARAGUAY</option>
+                                            <option>PERU</option>
+                                            <option>PHILIPPINES</option>
+                                            <option>PITCAIRN</option>
+                                            <option>POLAND</option>
+                                            <option>PORTUGAL</option>
+                                            <option>PUERTO RICO</option>
+                                            <option>QATAR</option>
+                                            <option>REUNION</option>
+                                            <option>ROMANIA</option>
+                                            <option>RUSSIA</option>
+                                            <option>RUSSIAN FEDERATION</option>
+                                            <option>RWANDA</option>
+                                            <option>SAINT KITTS AND NEVIS</option>
+                                            <option>SAMOA</option>
+                                            <option>SAMOA (AMERICAN)</option>
+                                            <option>SAMOA (WESTERN)</option>
+                                            <option>SAN MARINO</option>
+                                            <option>SAO TOME &amp; PRINCIPE</option>
+                                            <option>SAUDI ARABIA</option>
+                                            <option>SENEGAL</option>
+                                            <option>SERBIA</option>
+                                            <option>SERBIA AND MONTENEGRO</option>
+                                            <option>SERBIA AND MONTENEGRO (see individual countries)</option>
+                                            <option>SEYCHELLES</option>
+                                            <option>SIERRA LEONE</option>
+                                            <option>SINGAPORE</option>
+                                            <option>SLOVAKIA</option>
+                                            <option>SLOVAKIA (Slovak Republic)</option>
+                                            <option>SLOVENIA</option>
+                                            <option>SOLOMON ISLANDS</option>
+                                            <option>SOMALIA</option>
+                                            <option>SOUTH AFRICA</option>
+                                            <option>SOUTH GEORGIA &amp; THE SOUTH SANDWICH ISLANDS</option>
+                                            <option>SOUTH SUDAN</option>
+                                            <option>SPAIN</option>
+                                            <option>SRI LANKA</option>
+                                            <option>ST BARTHELEMY</option>
+                                            <option>ST HELENA</option>
+                                            <option>ST KITTS &amp; NEVIS</option>
+                                            <option>ST LUCIA</option>
+                                            <option>ST MAARTEN (DUTCH PART)</option>
+                                            <option>ST MARTIN (FRENCH PART)</option>
+                                            <option>ST PIERRE &amp; MIQUELON</option>
+                                            <option>ST VINCENT</option>
+                                            <option>SUDAN</option>
+                                            <option>SURINAME</option>
+                                            <option>SVALBARD &amp; JAN MAYEN</option>
+                                            <option>SVALBARD AND JAN MAYEN ISLANDS</option>
+                                            <option>SWAZILAND</option>
+                                            <option>SWEDEN</option>
+                                            <option>SWITZERLAND</option>
+                                            <option>SYRIA</option>
+                                            <option>SYRIAN ARAB REPUBLIC</option>
+                                            <option>TAIWAN</option>
+                                            <option>TAIWAN, PROVINCE OF CHINA</option>
+                                            <option>TAJIKISTAN</option>
+                                            <option>TANZANIA</option>
+                                            <option>TANZANIA, UNITED REPUBLIC OF</option>
+                                            <option>THAILAND</option>
+                                            <option>TOGO</option>
+                                            <option>TOKELAU</option>
+                                            <option>TONGA</option>
+                                            <option>TRINIDAD &amp; TOBAGO</option>
+                                            <option>TRINIDAD AND TOBAGO</option>
+                                            <option>TUNISIA</option>
+                                            <option>TURKEY</option>
+                                            <option>TURKMENISTAN</option>
+                                            <option>TURKS &amp; CAICOS IS</option>
+                                            <option>TUVALU</option>
+                                            <option>UGANDA</option>
+                                            <option>UKRAINE</option>
+                                            <option>UNITED ARAB EMIRATES</option>
+                                            <option>UNITED KINGDOM</option>
+                                            <option>UNITED STATES</option>
+                                            <option>UNITED STATES MINOR OUTLYING ISLANDS</option>
+                                            <option>URUGUAY</option>
+                                            <option>UZBEKISTAN</option>
+                                            <option>VANUATU</option>
+                                            <option>VATICAN CITY</option>
+                                            <option>VATICAN CITY STATE (HOLY SEE)</option>
+                                            <option>VENEZUELA</option>
+                                            <option>VIET NAM</option>
+                                            <option>VIETNAM</option>
+                                            <option>VIRGIN ISLANDS (UK)</option>
+                                            <option>VIRGIN ISLANDS (US)</option>
+                                            <option>WALLIS &amp; FUTUNA</option>
+                                            <option>WALLIS AND FUTUNA ISLANDS</option>
+                                            <option>WESTERN SAHARA</option>
+                                            <option>YEMEN</option>
+                                            <option>YUGOSLAVIA</option>
+                                            <option>ZAIRE</option>
+                                            <option>ZAMBIA</option>
+                                            <option>ZIMBABWE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patientsex" class="col-md-5 control-label">Patient Sex:</label>
+
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="patientsex" name="patientsex"
+                                                ng-model="patientsex">
+                                            <option value=""></option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="manufacturername" class="col-md-5 control-label">Manufacturer
+                                        Name:</label>
+
+                                    <div class="col-md-7">
+                                        <input id="manufacturername" type="text" class="form-control"
+                                               name="manufacturername"
+                                               ng-model="manufacturername">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="drugbrandname" class="col-md-5 control-label">Brand Name: <br>
+                                        <small> (ex: tylenol)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="drugbrandname" name="drugbrandname"
+                                               ng-model="drugbrandname">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="druggenericname" class="col-md-5 control-label">Generic Name: <br>
+                                        <small> (ex: acetaminophen)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="druggenericname"
+                                               name="druggenericname"
+                                               ng-model="druggenericname">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="medicinalproduct" class="col-md-5 control-label">Medicinal
+                                        Product: </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="medicinalproduct"
+                                               name="medicinalproduct"
+                                               ng-model="medicinalproduct">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reactionmeddrapt" class="col-md-5 control-label">Reaction: <br>
+                                        <small> (ex: nausea)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input id="reactionmeddrapt" type="text" class="form-control"
+                                               name="reactionmeddrapt"
+                                               ng-model="reactionmeddrapt">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-5 control-label">Seriousness:</label>
+
+                                    <div class="col-md-7">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="seriousnessdeath" id="seriousnessdeath"
+                                                       value="1">Death
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="seriousnesshospitalization"
+                                                       id="seriousnesshospitalization" value="1">Hospitalization
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="seriousnesscongenitalanomali"
+                                                       id="seriousnesscongenitalanomali"
+                                                       value="1">Congenital Anomali
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="seriousnessdisabling"
+                                                       id="seriousnessdisabling"
+                                                       value="1">Disabling
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="seriousnesslifethreatening"
+                                                       id="seriousnesslifethreatening" value="1">Life
+                                                Threatening
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="drugclass" class="col-md-5 control-label">Pharmacologic Class:</label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="drugclass" name="drugclass"
+                                               ng-model="drugclass">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="drugindication" class="col-md-5 control-label">Drug Indication: <br>
+                                        <small> (ex: hypertension)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" id="drugindication" class="form-control"
+                                               name="drugindication"
+                                               ng-model="drugindication">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="indsubmit" class="col-md-5 control-label">Individual Submitting:</label>
+
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="indsubmit" name="indsubmit">
+                                            <option value=""></option>
+                                            <option value="1">Physician</option>
+                                            <option value="2">Pharmacist</option>
+                                            <option value="3">Other health professional</option>
+                                            <option value="4">Lawyer</option>
+                                            <option value="5">Consumer or non-health professional</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productndc" class="col-md-5 control-label">Product NDC: <br>
+                                        <small> (ex: 62037-831)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" id="productndc" class="form-control" name="productndc"
+                                               ng-model="productndc">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="safetyreportid" class="col-md-5 control-label">Report ID: <br>
+                                        <small> (ex: 1234567-8)</small>
+                                    </label>
+
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="safetyreportid"
+                                               name="safetyreportid"
+                                               ng-model="safetyreportid">
+                                    </div>
+                                </div>
+                                <p class="text-center"><em>To search for reports that match either of two or more terms
+                                    add a +
+                                    between your
+                                    search words. Spaces between words act like an "AND" search when looking for two or
+                                    more
+                                    criteria. </em>
+                                </p>
+
+                                <div class="form-group">
+                                    <div class="col-md-7 pull-right">
+                                        <button type="submit" id="submit" class="btn btn-primary btn-lg pull-right">
+                                            Search
+                                            Adverse Event Reports
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="well">
+                <h3 class="text-center">Your search  generated <b><i><u>{{total}}</u></i></b> Adverse
+                    Event reports</h3>
+
+                <p class="text-center"><em>This is a beta research project using the <a href="http://open.fda.gov/">OpenFDA
+                    API</a> and not for clinical use.</em></p>
+                <!-- <p></p><center><a href="/drugeventcompare" class="btn btn-primary" role="button">Compare Two Criteria</a></center><p></p> -->
+            </div>
+            <div><p>
+                <center>You are on page {{page}} of {{maxPage}}</center>
+                </p></div>
+            <!--<pager total-items="{{maxPage}}" ng-model="{{page}}"></pager>-->
+            <ul class="pager">
+                <li ng-if="navigationPrevious" class="previous-page"><a href="#">{{navigationPrevious}}</a></li>
+                <li ng-if="navigationNext" class="next-page"><a href="#">{{navigationNext}}</a></li>
+            </ul>
+            <div ng-if="results.length != '0'">
+                <accordion>
+                    <accordion-group heading="{{result.safetyreportid}}" ng-repeat="result in results" ng-class="{done: result.done}">
+                        <accordion-heading>
+                            <span ng-if="result.patient.patientsex == '1'">male </span><span
+                                ng-if="result.patient.patientsex == '2'">female </span>patient ... in report
+                            {{result.safetyreportid}} ... first received on {{result.receivedate}}
+                        </accordion-heading>
+                        <div class="row">
+                            <!--patient_info-->
+
+                            <div class="col-md-3" ng-repeat="(name, value) in patient_info">
+                                <b>{{value}}</b>: <span ng-if="name != 'result.fulfillexpeditecriteria'"><span
+                                    ng-bind={{name}}></span></span>
+                                <span ng-if="name == 'result.fulfillexpeditecriteria'"><span ng-bind={{name}}></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" ng-repeat="(name, value) in patient_reaction">
+                                <b>{{value}}</b>: <span ng-repeat="reaction in result.patient.reaction">{{reaction.reactionmeddrapt}}, </span>
+                            </div>
+                        </div>
+                        <h4><u>Medications:</u></h4>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <td><b>Name <br>
+                                                <small><i>(MedlinePlus Link)</i></small>
+                                            </b></td>
+                                            <td><b>Dosage</b></td>
+                                            <td><b>Route</b></td>
+                                            <td><b>Action</b></td>
+                                            <td><b>Characterization</b></td>
+                                            <td><b>Indication <br>
+                                                <small><i>(ClinicalTrials.Gov Link)</i></small>
+                                            </b></td>
+                                            <td><b>Start</b></td>
+                                            <td><b>End</b></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="drug in getDrug(result)" ng-class="{done: drug.done}">
+                                            <td>
+                                                <a href="http://vsearch.nlm.nih.gov/vivisimo/cgi-bin/query-meta?v%3Aproject=medlineplus&query={{drug.medicinalproduct}}"
+                                                   target="_blank">
+                                                    {{drug.medicinalproduct}}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                {{drug.drugdosagetext}}
+                                            </td>
+                                            <td>
+                                                <span ng-repeat="route in getRoute(drug)" ng-class="{done: route.done}">
+                                                    {{route}},
+                                                </span>
+
+                                            </td>
+                                            <td>
+                                                <span ng-if=" drug.drugadministrationroute == '048'">Does not changed</span>
+                                            </td>
+                                            <td>
+                                                <span ng-if="drug.drugcharacterization == '1'">Suspect drug</span>
+                                            </td>
+                                            <td>
+                                                <a href="https://clinicaltrials.gov/ct2/results/map?term={{drug.drugindication}}"
+                                                   target="_blank">{{drug.drugindication}}</a>
+                                            </td>
+                                            <td>
+                                                {{drug.drugstartdate}}
+                                            </td>
+                                            <td>
+                                                {{drug.drugenddate}}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <h4><u>Drug Info:</u></h4>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.generic_name">
+                                {{name}}
+                            </span>
+                        </span>
+                            </div>
+                            <div class="col-md-3">
+                                <b>Pharmacologic Class:</b>
+                        <span ng-repeat="d in get_pharm_class_epc (result)">
+                                {{name}}
+                        </span>
+                            </div>
+                            <div class="col-md-3">
+                                <b>Application Number:</b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.application_number">
+                                {{name}}
+                            </span>
+                        </span>
+                            </div>
+                            <div class="col-md-3">
+                                <b>Manufacturer Name: <br/>
+                                    <small><i>(Google Search) </i></small>
+                                </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.manufacturer_name">
+                                <a href="https://www.google.com/#q={{name}}" target="_blank">{{name}}</a>,
+                            </span>
+                        </span>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b>SPL ID: </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.spl_id">
+                                {{name}}, 
+                            </span>
+                        </span>
+                            </div>
+                            <div class="col-md-6">
+                                <b>SPL Set ID: </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.spl_set_id">
+                                {{name}}, 
+                            </span>
+                        </span>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <b>Product NDC:
+                                    <small><i>(NLM DailyMed Link)</i></small>
+                                </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.product_ndc">
+                                <a href="http://dailymed.nlm.nih.gov/dailymed/search.cfm?query={{name}}"
+                                   target="_blank">{{name}}</a>,
+                            </span>
+                        </span>
+
+                            </div>
+                            <div class="col-md-4">
+                                <b>RxNorm Code:
+                                    <small><i>(MedlinePlus Connect Link)</i></small>
+                                </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.rxcui">
+                                <a href="http://apps2.nlm.nih.gov/medlineplus/services/mpconnect.cfm?mainSearchCriteria.v.cs=2.16.840.1.113883.6.88&mainSearchCriteria.v.c={{name}}"
+                                   target="_blank">{{name}}</a>,
+                            </span>
+                        </span>
+
+                            </div>
+                            <div class="col-md-4">
+                                <b>Package NDC:
+                                    <small><i>(NLM DailyMed Link)</i></small>
+                                </b>
+                        <span ng-repeat="d in result.patient.drug">
+                            <span ng-repeat="name in d.openfda.package_ndc">
+                                <a href="http://dailymed.nlm.nih.gov/dailymed/search.cfm?query={{name}}"
+                                   target="_blank">{{name}}</a>,
+                            </span>
+                        </span>
+
+                            </div>
+                        </div>
+
+            </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>
+</div>
+</div>
