@@ -18,18 +18,21 @@ console.log(results);
 (function() {
 
     var advancedSearchService = function($http, $rootScope, $location) {
-         $rootScope.showSpinner = false;
+        $rootScope.showSpinner = false;
+        $rootScope.noResultsFlag=false;
         var getAdvancedSearchResults = function(results) {
             $rootScope.showSpinner = true;
-            return $http.get('https://api.fda.gov/drug/event.json?search=' + results )
+             $rootScope.noResultsFlag = false;
+            return $http.get('https://api.fda.gov/drug/event.json?search=' + results)
                 .success(function(response) {
                     $rootScope.showSpinner = false;
                     return response;
                 })
                 .error(function(data, status, headers, config) {
                      $rootScope.showSpinner = false;
+
                     if ( status == "404") {
-                      $location.path('/noresults/')
+                      $rootScope.noResultsFlag = true;
                     }
                     return null;
                 });
@@ -39,7 +42,6 @@ console.log(results);
         return {
             getAdvancedSearchResults: getAdvancedSearchResults
         };
-
     };
 
 

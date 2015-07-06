@@ -78,9 +78,9 @@ angular.module('searchPrototypeApp')
             if ($scope.searchParam) {
                 str += "+AND+(" + $scope.searchParam + ")";
             }
-            //Pagination
-            var pagination = "&limit=" + $scope.limit + "&skip=" + $scope.skip;// + "&page=" + $scope.page;
-            return str + pagination;
+
+            str += "&limit=" + $scope.limit + "&skip=" + $scope.skip;// + "&page=" + $scope.page;
+            return str ;
         }
 
         $scope.submit = function(generalSearch) {

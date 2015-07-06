@@ -5,9 +5,9 @@
             placeholder="Enter your search term" ng-model="generalSearch">
             <div class="input-group-btn">
                 <button type="submit" name="searchText" class="btn btn-success submit-primary collapsed form-control">Search</button>
-<!--                 <input type="submit" name="searchText" class="btn btn-success submit-primary collapsed form-control"
+                <!--                 <input type="submit" name="searchText" class="btn btn-success submit-primary collapsed form-control"
                 value="Search"/>
- -->            </div>
+            -->            </div>
         </div>
     </form>
     <div class="col-md-12">
@@ -542,103 +542,110 @@
                         </div>
                         <circle-spinner ng-show="showSpinner"></circle-spinner>
                         <!-- Search Criteria -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div ng-if="renderResults && !showSpinner">
-                                    <div class="well">
-                                        <h3 class="text-center">Your search generated <b><i><u>{{total}}</u></i></b> Adverse
-                                        Event reports</h3>
-                                        <p class="text-center"><em>This is a beta research project using the <a href="http://open.fda.gov/">OpenFDA
-                                        API</a> and not for clinical use.</em></p>
-                                    </div>
-                                    <!--
-                                <pagination total-items="maxPage" ng-model="page" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged(page)"></pagination> -->
-                            <pagination boundary-links="true" total-items="maxPage" ng-model="page" max-size="maxSize" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged(page)" rotate="true" num-pages="numPages" ></pagination>
-                            <accordion>
-                                <accordion-group heading="{{result.safetyreportid}}" ng-repeat="result in results" ng-class="{'pointer-hover': 1==true}">
-                                    <accordion-heading>{{result.patient.patientonsetage}}
-                                        <span ng-if="result.patient.patientsex == '1'">male </span><span
-                                    ng-if="result.patient.patientsex == '2' || result.patient.patientsex == '0'">female </span>patient ... in report
-                                    {{result.safetyreportid}} ... first received on {{result.receivedate}}
-                                </accordion-heading>
-                                
-                                <div class="row">
-                                    <!--patient_info-->
-                                    <div class="col-md-3" ng-repeat="(name, value) in patient_info">
-                                        <b>{{value}}</b>: <span ng-if="name != 'result.fulfillexpeditecriteria'"><span
-                                        ng-bind={{name}}></span></span>
-                                        <span ng-if="name == 'result.fulfillexpeditecriteria'"><span ng-bind={{name}}></span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12" ng-repeat="(name, value) in patient_reaction">
-                                    <b>{{value}}</b>: <span ng-repeat="reaction in result.patient.reaction">{{reaction.reactionmeddrapt}}, </span>
-                                </div>
-                            </div>
-                            <h4><u>Medications:</u></h4>
+                        <div ng-show="!noResultsFlag">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <td><b>Name <br>
-                                                        <small><i>(MedlinePlus Link)</i></small>
-                                                    </b></td>
-                                                    <td><b>Dosage</b></td>
-                                                    <td><b>Route</b></td>
-                                                    <td><b>Action</b></td>
-                                                    <td><b>Characterization</b></td>
-                                                    <td><b>Indication <br>
-                                                        <small><i>(ClinicalTrials.Gov Link)</i></small>
-                                                    </b></td>
-                                                    <td><b>Start</b></td>
-                                                    <td><b>End</b></td>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr ng-repeat="drug in getDrug(result)">
-                                                    <td>
-                                                        <a ng-href="http://vsearch.nlm.nih.gov/vivisimo/cgi-bin/query-meta?v%3Aproject=medlineplus&query={{drug.medicinalproduct}}"
-                                                            target="_blank">
-                                                            {{drug.medicinalproduct}}
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        {{drug.drugdosagetext}}
-                                                    </td>
-                                                    <td>
-                                                        <span ng-repeat="route in drug.openfda.route">
-                                                            {{route}},
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span ng-if=" drug.drugadministrationroute == '048'">Does not changed</span>
-                                                    </td>
-                                                    <td>
-                                                        <span ng-if="drug.drugcharacterization == '1'">Suspect drug</span>
-                                                    </td>
-                                                    <td>
-                                                        <a ng-href="https://clinicaltrials.gov/ct2/results/map?term={{drug.drugindication}}"
-                                                        target="_blank">{{drug.drugindication}}</a>
-                                                    </td>
-                                                    <td>
-                                                        {{drug.drugstartdate}}
-                                                    </td>
-                                                    <td>
-                                                        {{drug.drugenddate}}
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div ng-if="renderResults && !showSpinner">
+                                        <div class="well">
+                                            <h3 class="text-center">Your search generated <b><i><u>{{total}}</u></i></b> Adverse
+                                            Event reports</h3>
+                                            <p class="text-center"><em>This is a beta research project using the <a href="http://open.fda.gov/">OpenFDA
+                                            API</a> and not for clinical use.</em></p>
+                                        </div>
+                                        <!--
+                                    <pagination total-items="maxPage" ng-model="page" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" ng-change="pageChanged(page)"></pagination> -->
+                                <pagination boundary-links="true" total-items="maxPage" ng-model="page" max-size="maxSize" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged(page)" rotate="true" num-pages="numPages" ></pagination>
+                                <accordion>
+                                    <accordion-group heading="{{result.safetyreportid}}" ng-repeat="result in results" ng-class="{'pointer-hover': 1==true}">
+                                        <accordion-heading>{{result.patient.patientonsetage}}
+                                            <span ng-if="result.patient.patientsex == '1'">male </span><span
+                                        ng-if="result.patient.patientsex == '2' || result.patient.patientsex == '0'">female </span>patient ... in report
+                                        {{result.safetyreportid}} ... first received on {{result.receivedate}}
+                                    </accordion-heading>
+                                    
+                                    <div class="row">
+                                        <!--patient_info-->
+                                        <div class="col-md-3" ng-repeat="(name, value) in patient_info">
+                                            <b>{{value}}</b>: <span ng-if="name != 'result.fulfillexpeditecriteria'"><span
+                                            ng-bind={{name}}></span></span>
+                                            <span ng-if="name == 'result.fulfillexpeditecriteria'"><span ng-bind={{name}}></span>
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-                            <br/>
-                        </accordion-group>
-                    </accordion>
+                                <div class="row">
+                                    <div class="col-md-12" ng-repeat="(name, value) in patient_reaction">
+                                        <b>{{value}}</b>: <span ng-repeat="reaction in result.patient.reaction">{{reaction.reactionmeddrapt}}, </span>
+                                    </div>
+                                </div>
+                                <h4><u>Medications:</u></h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>Name <br>
+                                                            <small><i>(MedlinePlus Link)</i></small>
+                                                        </b></td>
+                                                        <td><b>Dosage</b></td>
+                                                        <td><b>Route</b></td>
+                                                        <td><b>Action</b></td>
+                                                        <td><b>Characterization</b></td>
+                                                        <td><b>Indication <br>
+                                                            <small><i>(ClinicalTrials.Gov Link)</i></small>
+                                                        </b></td>
+                                                        <td><b>Start</b></td>
+                                                        <td><b>End</b></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="drug in getDrug(result)">
+                                                        <td>
+                                                            <a ng-href="http://vsearch.nlm.nih.gov/vivisimo/cgi-bin/query-meta?v%3Aproject=medlineplus&query={{drug.medicinalproduct}}"
+                                                                target="_blank">
+                                                                {{drug.medicinalproduct}}
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            {{drug.drugdosagetext}}
+                                                        </td>
+                                                        <td>
+                                                            <span ng-repeat="route in drug.openfda.route">
+                                                                {{route}},
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if=" drug.drugadministrationroute == '048'">Does not changed</span>
+                                                        </td>
+                                                        <td>
+                                                            <span ng-if="drug.drugcharacterization == '1'">Suspect drug</span>
+                                                        </td>
+                                                        <td>
+                                                            <a ng-href="https://clinicaltrials.gov/ct2/results/map?term={{drug.drugindication}}"
+                                                            target="_blank">{{drug.drugindication}}</a>
+                                                        </td>
+                                                        <td>
+                                                            {{drug.drugstartdate}}
+                                                        </td>
+                                                        <td>
+                                                            {{drug.drugenddate}}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                            </accordion-group>
+                        </accordion>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+        <div ng-show="noResultsFlag">
+            <alert type="danger">Your search returned no Results</alert>
+        </div>
         </div>
     </div>
