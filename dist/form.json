@@ -1,0 +1,21 @@
+{
+	"patient_info" : {
+		"result.patient.patientweight": "Patient Weight(kg)",
+		"result.primarysource.reportercountry" : "Reporter Country",
+		"result.reporttype": "Individual Submitting",
+		"result.fulfillexpeditecriteria": "Expedited?"
+	},
+	"patient_reaction" : {
+		"result.patient_reaction": "Patient Reaction"
+	},
+	"medication_headers" : {
+		"medicinalproduct" : "Name<br/><small>(MedlinePlus Link)</small>",
+		"drug.drugdosagetext" : "Dosage",
+		"drug.drugadministrationroute" : "Route",
+		"Action" : "Action",
+		"drugcharacterization" : "Characterization",
+		"drug.drugindication" : "Indication",
+		"drug.drugstartdate" : "Start",
+		"drug.drugenddate" : "End"
+	}
+}
