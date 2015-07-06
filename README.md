@@ -8,8 +8,6 @@ Summary of Approach: README.md (this file)
 
 Product Backlog: On Ralley, final snapshot in [Documents] (https://github.com/enterprise-people-inc/APIWebApp/tree/master/documents)
 
-RFQ Attachment E: /documents/rfq/
-
 ###Vision
 
 For people who want to find about the Drug events for themselves or their family. Enterprise People Inc built APIWebApp, which is a simple and responsive web app that allows people to quickly search for the drugs and see the impacts it did in the past.
