@@ -39,7 +39,7 @@ We approached this as standalong web application consuming RESTful web services.
 
 ####Continous Integration
 - [x] Heroku & Git automatic deployment
-- [x] CodeShip to build & deploy to different environments. (GitHub commit triggers the build and deploy for DEVELOPMENT & TESTING)
+- [x] CodeShip to build & deploy to different environments. (GitHub commit triggers the build and deploys to different environments)
 
 ###Development Process
 Our architect, expored multiple technologies and frameworks, and finalized on AngularJS MVC framework for this project. Architect established the best practies and industry standards to minimize the custom code and also to make it extendable and re-usable.

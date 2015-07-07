@@ -1,6 +1,8 @@
 {
   "name": "searchprototype",
-  "version": "0.0.0",
+  "author": "Enterprise People Inc",
+  "version": "1.0.0",
+  "license" : "mit",
   "dependencies": {
     "body-parser": "^1.5.2",
     "connect-modrewrite": "^0.8.1",
