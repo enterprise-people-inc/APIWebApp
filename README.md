@@ -51,6 +51,9 @@ All the source code is stored in .git, Scrum master and Product owner worked tog
 ###Testing & Deployments
 Our deployment process includes ```grunt build``` runs all the tests and generates the necessary files for deployments under dist folder, which gets deployed to Heroku automatically once the changed code is commited to Git.
 
+Running `grunt test` will run the unit tests with karma.
+
+
 ###Deployment
 We have used Heroku as our deployment platform to continously deploy the application directly form GitHub.
 
